@@ -4,6 +4,7 @@ package com.daotrung.bai1_b5;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,11 +30,22 @@ public class MainActivity extends AppCompatActivity {
     FileAdapter adapter;
     ArrayList<FileMode> fileModes;
     ImageButton imgDialog ;
+    TextView txtToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // toolbar
+        Toolbar toolbar_demo = findViewById(R.id.toolbar);
+        txtToolbar = findViewById(R.id.txtToolbar);
+        setSupportActionBar(toolbar_demo);
+        txtToolbar.setText(toolbar_demo.getTitle());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         rvPDF = findViewById(R.id.rvPDF);
         imgDialog = findViewById(R.id.openDialog);
         fileModes = new ArrayList<FileMode>();

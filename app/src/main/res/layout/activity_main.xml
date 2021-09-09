@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_demo"/>
+
     <TextView
         android:id="@+id/txtFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="20sp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="30sp"
         android:layout_marginBottom="20sp"
+        android:layout_below="@+id/toolbar"
         android:text="Recent Book "
         android:textColor="@color/black"
         android:textSize="25sp" />
